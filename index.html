@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lịch năm 2022</h1>
+<h3>Tính các ngày trong 1 tháng</h3><br>
+<label>Hãy nhập 1 tháng bất kì trong năm 2022</label> <br><br>
+<input type="text" id="oNhapSo">
+<button onclick="tinhNgay()">Nhấn để tính</button>
+<br> <br>
+<h1 style="background-color: blue;color: red" id="hienThi"></h1>
+<script>
+    function tinhNgay() {
+        let nhapSoThang = +document.getElementById('oNhapSo').value;
+        let ketQua;
+        switch (nhapSoThang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ketQua = ("\n Tháng có 31 ngày");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                ketQua = ("\n Tháng có 30 ngày");
+                break;
+            case 2:
+                ketQua = ("\n Tháng co 29 ngày");
+                break;
+            default:
+                ketQua = ("\n Tháng không hợp lệ, vui lòng nhập lại từ 1 --->12 !");
+                break;
+        }
+        document.getElementById('hienThi').innerHTML = ketQua
+    }
+</script>
+</body>
+</html>
